@@ -2,9 +2,11 @@ public class AnalistaSituacional
 {
     private Tabuleiro tabDoJogo;
 
-    public AnalistaSituacional (Tabuleiro tab) throws Exception
+    public AnalistaSituacional (Tabuleiro tab) throws Exception //feito
     {
         // colocar tab em tabDoJogo
+        if (tab == null) throw new Exception ("Tabuleiro inválido.");
+        this.tabDoJogo = (Tabuleiro) tab.clone();
     }
 
     public Marca getMarcaDoVencedor ()
@@ -12,14 +14,27 @@ public class AnalistaSituacional
         // descobrir se ha um vencedor e retornar
         // a marca dele; retornara null, quando
         // nao houver vencedor
+        for (int lin = 0; lin<3; lin++) {
+            
+        }
     }
 
-    private boolean tabuleiroCheio ()
+    private boolean tabuleiroCheio () //feito
     {
         // verificar se todas as posicoes do
         // tabuleiro estao preenchidas (!=null)
         // retornando true em caso afirmativo,
         // ou false em caso negativo
+        for (int lin = 0; lin<3; lin++) {
+            try {
+                if (!this.tabDoJogo.haMarcaNaPosicao(lin, 0)) return false;
+                if (!this.tabDoJogo.haMarcaNaPosicao(lin, 1)) return false;
+                if (!this.tabDoJogo.haMarcaNaPosicao(lin, 2)) return false;
+            }
+            catch (Exception erro)
+            {}
+        }
+    return true;
     }
 
     public boolean fimDeJogo ()
@@ -44,8 +59,12 @@ public class AnalistaSituacional
     }
 
     @Override
-    public int hashCode ()
+    public int hashCode () //feito
     {
         // faça
+        int ret = 31;
+        ret = ret * 31 + tabDoJogo.hashCode();
+        if (ret<0) ret = -ret;
+        return ret;
     }
 }

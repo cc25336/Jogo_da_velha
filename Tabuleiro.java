@@ -39,11 +39,11 @@ public class Tabuleiro implements Cloneable
     @Override
     public String toString ()
     {
-        return matriz[0][0] + " | " matriz[1][0] + " | " + matriz[2][0] + "\n" +
+        return matriz[0][0] + " | " +matriz[1][0] + " | " + matriz[2][0] + "\n" +
                "__|___|__" +
-               matriz[0][1] + " | " matriz[1][1] + " | " + matriz[2][1] + "\n" +
+               matriz[0][1] + " | " +matriz[1][1] + " | " + matriz[2][1] + "\n" +
                "__|___|__" +
-               matriz[0][2] + " | " matriz[1][2] + " | " + matriz[2][2] + "\n" +
+               matriz[0][2] + " | " +matriz[1][2] + " | " + matriz[2][2] + "\n" +
                "  |   |  ";
         // retornar em um String o tabuleiro
         // formatado para ser exibido na tela

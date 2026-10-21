@@ -12,10 +12,14 @@ public class JogadorHumano implements Jogador
 
     public JogadorHumano (Tabuleiro tab) throws Exception
     {
+        if (tab == null) throw new Exception("Tabuleiro não fornecido");
+        String marca = teclado.readLine();
+        if (marca.length() != 1)
         // atribuir tab para tabDoJogo
         // pedir para o jogador escolher
         // sua marca e permitir digitacao
         // intanciando marca
+
     }
 
     public JogadorHumano (Tabuleiro tab, Marca mrc) throws Exception

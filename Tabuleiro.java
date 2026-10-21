@@ -39,11 +39,11 @@ public class Tabuleiro implements Cloneable
     @Override
     public String toString ()
     {
-        return matriz[0][0] + " | " +matriz[1][0] + " | " + matriz[2][0] + "\n" +
-               "__|___|__" +
-               matriz[0][1] + " | " +matriz[1][1] + " | " + matriz[2][1] + "\n" +
-               "__|___|__" +
-               matriz[0][2] + " | " +matriz[1][2] + " | " + matriz[2][2] + "\n" +
+        return matriz[0][0] + " | " +matriz[0][1] + " | " + matriz[0][2] + "\n" +
+               "__|___|__\n" +
+               matriz[1][0] + " | " +matriz[1][1] + " | " + matriz[1][2] + "\n" +
+               "__|___|__\n" +
+               matriz[2][0] + " | " +matriz[2][1] + " | " + matriz[2][2] + "\n" +
                "  |   |  ";
         // retornar em um String o tabuleiro
         // formatado para ser exibido na tela
@@ -71,7 +71,7 @@ public class Tabuleiro implements Cloneable
         int ret = 7;
         for(byte posCol = 0; posCol<3; posCol++){
             for (byte posLin = 0; posLin<3; posLin++){
-                ret = ret * 31 + ((Character)this.matriz[posLin][posCol]).hashCode();
+                ret = ret * 31 + (this.matriz[posLin][posCol]).hashCode();
             }
         }
         return ret;

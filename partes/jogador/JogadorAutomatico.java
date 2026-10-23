@@ -2,7 +2,7 @@ package partes.jogador;
 import partes.Marca;
 import partes.Tabuleiro;
 
-public class JogadorAutomatico implements Jogador
+public class JogadorAutomatico implements Jogador, Cloneable
 {
     private Marca     marca     = null;
     private Tabuleiro tabDoJogo = null;
@@ -433,5 +433,28 @@ public class JogadorAutomatico implements Jogador
         }
         catch (Exception erro)
         {} // ignorando pois sei que n o estou usando posicao invalida nem comparando com equals um null
+    }
+
+    @Override
+    public String toString (){
+
+    }
+    
+    @Override
+    public boolean equals(Object obj){
+
+    }
+
+    @Override
+    public int hashCode(){
+
+    }
+    
+    public JogadorAutomatico (JogadorAutomatico modelo) throws Exception{
+
+    }
+
+    public Object clone(){
+        
     }
 }

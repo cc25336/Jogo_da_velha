@@ -1,7 +1,7 @@
-﻿package jogador;
-import jogo.Tabuleiro;
-import jogo.Marca;
+﻿package partes.jogador;
 import java.io.*;
+import partes.Marca;
+import partes.Tabuleiro;
 
 public class JogadorHumano implements Jogador
 {
@@ -28,7 +28,7 @@ public class JogadorHumano implements Jogador
         } while (marcaDigitada.length() != 1 || (marcaDigitada.charAt(0) != 'X' && marcaDigitada.charAt(0) != 'O') );
 
         this.tabDoJogo = tab;
-        this.marca = marcaDigitada.charAt(0);
+        this.marca = new Marca(marcaDigitada.charAt(0));
         // atribuir tab para tabDoJogo
         // pedir para o jogador escolher
         // sua marca e permitir digitacao

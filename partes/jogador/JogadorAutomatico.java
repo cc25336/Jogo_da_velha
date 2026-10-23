@@ -1,4 +1,6 @@
-package jogador;
+package partes.jogador;
+import partes.Marca;
+import partes.Tabuleiro;
 
 public class JogadorAutomatico implements Jogador
 {

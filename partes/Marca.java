@@ -1,4 +1,4 @@
-package jogo;
+package partes;
 public class Marca
 {
     private char simbolo;

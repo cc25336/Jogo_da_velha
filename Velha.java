@@ -1,7 +1,10 @@
-package jogo;
-import jogador.*;
 
 import java.io.*;
+
+import partes.AnalistaSituacional;
+import partes.Marca;
+import partes.Tabuleiro;
+import partes.jogador.*;
 
 public class Velha
 {

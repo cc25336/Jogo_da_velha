@@ -1,4 +1,4 @@
-package jogador;
+package partes.jogador;
 
 public interface Jogador
 {

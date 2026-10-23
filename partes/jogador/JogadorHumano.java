@@ -44,6 +44,7 @@ public class JogadorHumano implements Jogador, Cloneable
         if (mrc==null) throw new Exception ("Marca não fornecida.");
         this.tabDoJogo = tab;
         this.marca = mrc;
+        System.out.println("Sua marca é " + this.marca);
         // atribuir tab para tabDoJogo
         // e mrc para marca
     }
@@ -58,6 +59,7 @@ public class JogadorHumano implements Jogador, Cloneable
     {
         String jogada = "";
         char coluna = 'A';
+        int colunaReal = 0;
         int linha = 0;
         for (;;) {
             try {
@@ -74,17 +76,16 @@ public class JogadorHumano implements Jogador, Cloneable
                 linha = jogada.charAt(1) - '0';
                 boolean haMarcaNaPosicao = false;
                 try {
-                    haMarcaNaPosicao = this.tabDoJogo.haMarcaNaPosicao(linha, coluna);
+                    if (coluna == 'A') colunaReal = 0;
+                    else if (coluna == 'B') colunaReal = 1;
+                    else if (coluna == 'C') colunaReal = 2;
+                    haMarcaNaPosicao = this.tabDoJogo.haMarcaNaPosicao(linha-1, colunaReal);
                 } catch (Exception erro) {}
 
                 if (((coluna == 'A' || coluna == 'B' || coluna == 'C') && (linha == 1 || linha == 2 || linha == 3)) && !haMarcaNaPosicao) break;
                 System.out.println("Jogada inválida, tente novamente");
             }
         }
-        int colunaReal = 0;
-        if (coluna == 'A') colunaReal = 0;
-        else if (coluna == 'B') colunaReal = 1;
-        else if (coluna == 'C') colunaReal = 2;
 
         try {
             this.tabDoJogo.setMarcaNaPosicao(this.marca, linha-1, colunaReal);

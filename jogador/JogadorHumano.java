@@ -1,5 +1,6 @@
 ﻿package jogador;
-
+import jogo.Tabuleiro;
+import jogo.Marca;
 import java.io.*;
 
 public class JogadorHumano implements Jogador
@@ -13,8 +14,21 @@ public class JogadorHumano implements Jogador
     public JogadorHumano (Tabuleiro tab) throws Exception
     {
         if (tab == null) throw new Exception("Tabuleiro não fornecido");
-        String marca = teclado.readLine();
-        if (marca.length() != 1)
+        String marcaDigitada = null;
+        do {
+            try {
+                System.out.print("Escolha sua marca(X ou O): ");
+                marcaDigitada = teclado.readLine();
+            } catch (IOException erro) {
+                System.err.println("Erro ao ler sua opção.");
+            }
+            if (marcaDigitada.length() != 1 || (marcaDigitada.charAt(0) != 'X' && marcaDigitada.charAt(0) != 'O') ) {
+                System.out.println("Marca inválida, digite novamente.\n");
+            }
+        } while (marcaDigitada.length() != 1 || (marcaDigitada.charAt(0) != 'X' && marcaDigitada.charAt(0) != 'O') );
+
+        this.tabDoJogo = tab;
+        this.marca = marcaDigitada.charAt(0);
         // atribuir tab para tabDoJogo
         // pedir para o jogador escolher
         // sua marca e permitir digitacao

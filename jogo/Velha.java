@@ -1,4 +1,6 @@
+package jogo;
 import jogador.*;
+
 import java.io.*;
 
 public class Velha

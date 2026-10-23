@@ -408,24 +408,28 @@ public class JogadorAutomatico implements Jogador
             if (this.tabDoJogo.getMarcaNaPosicao(0, 2)==null &&
                 this.tabDoJogo.getMarcaNaPosicao(1, 1)==null &&
                 this.tabDoJogo.getMarcaNaPosicao(2, 0)!=null && this.tabDoJogo.getMarcaNaPosicao(2, 0).equals(this.marca))
-                this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,0);
+                this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,2);
             else
             if (this.tabDoJogo.getMarcaNaPosicao(0, 2)==null &&
                 this.tabDoJogo.getMarcaNaPosicao(1, 1)!=null && this.tabDoJogo.getMarcaNaPosicao(1, 1).equals(this.marca) &&
                 this.tabDoJogo.getMarcaNaPosicao(2, 0)==null)
-                this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,0);
+                this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,2);
             else
             if (this.tabDoJogo.getMarcaNaPosicao(0, 2)!=null && this.tabDoJogo.getMarcaNaPosicao(0, 2).equals(this.marca) &&
                 this.tabDoJogo.getMarcaNaPosicao(1, 1)==null &&
                 this.tabDoJogo.getMarcaNaPosicao(2, 0)==null)
-                this.tabDoJogo.setMarcaNaPosicao(this.marca, 2,2);
+                this.tabDoJogo.setMarcaNaPosicao(this.marca, 2,0);
             else
             // termine jogando num lugar qualquer que esteja livre
-            if (this.tabDoJogo.getMarcaNaPosicao(1, 1)==null && this.tabDoJogo.setMarcaNaPosicao(this.marca, 1,1));
-            if (this.tabDoJogo.getMarcaNaPosicao(0, 0)==null && this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,0));
-            if (this.tabDoJogo.getMarcaNaPosicao(0, 2)==null && this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,2));
-            if (this.tabDoJogo.getMarcaNaPosicao(2, 0)==null && this.tabDoJogo.setMarcaNaPosicao(this.marca, 2,0));
-            if (this.tabDoJogo.getMarcaNaPosicao(2, 2)==null && this.tabDoJogo.setMarcaNaPosicao(this.marca, 2,2));
+            if      (this.tabDoJogo.getMarcaNaPosicao(1, 1)==null) this.tabDoJogo.setMarcaNaPosicao(this.marca, 1,1);
+            else if (this.tabDoJogo.getMarcaNaPosicao(0, 0)==null) this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,0);
+            else if (this.tabDoJogo.getMarcaNaPosicao(0, 2)==null) this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,2);
+            else if (this.tabDoJogo.getMarcaNaPosicao(2, 0)==null) this.tabDoJogo.setMarcaNaPosicao(this.marca, 2,0);
+            else if (this.tabDoJogo.getMarcaNaPosicao(2, 2)==null) this.tabDoJogo.setMarcaNaPosicao(this.marca, 2,2);
+            else if (this.tabDoJogo.getMarcaNaPosicao(0, 1)==null) this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,1);
+            else if (this.tabDoJogo.getMarcaNaPosicao(1, 0)==null) this.tabDoJogo.setMarcaNaPosicao(this.marca, 1,0);
+            else if (this.tabDoJogo.getMarcaNaPosicao(1, 2)==null) this.tabDoJogo.setMarcaNaPosicao(this.marca, 1,2);
+            else this.tabDoJogo.setMarcaNaPosicao(this.marca, 0,1);
         }
         catch (Exception erro)
         {} // ignorando pois sei que n o estou usando posicao invalida nem comparando com equals um null

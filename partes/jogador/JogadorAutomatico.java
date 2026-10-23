@@ -437,24 +437,40 @@ public class JogadorAutomatico implements Jogador, Cloneable
 
     @Override
     public String toString (){
-
+        return "Marca: " + this.marca;
     }
     
     @Override
     public boolean equals(Object obj){
-
+        if (obj == this) return true;
+        if (obj == null) return false;
+        if (obj.getClass() != this.getClass()) return false;
+        JogadorAutomatico j = (JogadorAutomatico)obj;
+        if (!j.marca.equals(this.marca)) return false;
+        if (!j.tabDoJogo.equals(this.tabDoJogo)) return false;
+        return true;
     }
 
     @Override
     public int hashCode(){
-
+        int ret = 7;
+        ret = ret * 31 + (this.marca).hashCode();
+        ret = ret * 31 + (this.tabDoJogo).hashCode();
+        if (ret < 0) ret = -ret;
+        return ret;
     }
     
     public JogadorAutomatico (JogadorAutomatico modelo) throws Exception{
-
+        if (modelo == null) throw new Exception("Modelo ausente");
+        this.marca = modelo.marca;
+        this.tabDoJogo = modelo.tabDoJogo;
     }
 
     public Object clone(){
-        
+        JogadorAutomatico ret = null;
+        try{
+            ret = new JogadorAutomatico(this);
+        } catch(Exception e){}
+        return ret;
     }
 }

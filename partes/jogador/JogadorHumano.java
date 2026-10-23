@@ -137,31 +137,45 @@ public class JogadorHumano implements Jogador, Cloneable
         // true ou false, conforme a resposta
     }
 
-    @Override
-    public String toString ()
-    {
-
+     @Override
+    public String toString (){
+        return "Marca: " + this.marca;
     }
     
     @Override
-    public boolean equals(Object obj)
-    {
-
+    public boolean equals(Object obj){
+        if (obj == this) return true;
+        if (obj == null) return false;
+        if (obj.getClass() != this.getClass()) return false;
+        JogadorHumano j = (JogadorHumano)obj;
+        if (!j.marca.equals(this.marca)) return false;
+        if (!j.tabDoJogo.equals(this.tabDoJogo)) return false;
+        if (!j.teclado.equals(this.teclado)) return false;
+        return true;
     }
 
     @Override
-    public int hashCode()
-    {
-
+    public int hashCode(){
+        int ret = 7;
+        ret = ret * 31 + (this.marca).hashCode();
+        ret = ret * 31 + (this.tabDoJogo).hashCode();
+        ret = ret * 31 + (this.teclado).hashCode();
+        if (ret < 0) ret = -ret;
+        return ret;
     }
     
-    public JogadorHumano (JogadorHumano modelo) throws Exception
-    {
-
+    public JogadorHumano (JogadorHumano modelo) throws Exception{
+        if (modelo == null) throw new Exception("Modelo ausente");
+        this.marca = modelo.marca;
+        this.tabDoJogo = modelo.tabDoJogo;
+        this.teclado = modelo.teclado;
     }
 
-    public Object clone()
-    {
-        
+    public Object clone(){
+        JogadorHumano ret = null;
+        try{
+            ret = new JogadorHumano(this);
+        } catch(Exception e){}
+        return ret;
     }
 }

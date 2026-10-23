@@ -24,13 +24,13 @@ public class JogadorHumano implements Jogador
             } catch (IOException erro) {
                 System.out.println("Erro ao ler sua opção.");
             }
-            if (marcaDigitada.length() != 1 || (marcaDigitada.charAt(0) != 'X' && marcaDigitada.charAt(0) != 'O')) {
+            if (marcaDigitada.length() != 1 || (Character.toUpperCase(marcaDigitada.charAt(0)) != 'X' && Character.toUpperCase(marcaDigitada.charAt(0)) != 'O')) {
                 System.out.println("Marca inválida, digite novamente.\n");
             }
-        } while (marcaDigitada.length() != 1 || (marcaDigitada.charAt(0) != 'X' && marcaDigitada.charAt(0) != 'O') );
+        } while (marcaDigitada.length() != 1 || (Character.toUpperCase(marcaDigitada.charAt(0)) != 'X' && Character.toUpperCase(marcaDigitada.charAt(0)) != 'O'));
 
         this.tabDoJogo = tab;
-        this.marca = new Marca(marcaDigitada.charAt(0));
+        this.marca = new Marca(Character.toUpperCase(marcaDigitada.charAt(0)));
         // atribuir tab para tabDoJogo
         // pedir para o jogador escolher
         // sua marca e permitir digitacao

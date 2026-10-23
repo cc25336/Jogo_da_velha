@@ -25,8 +25,10 @@ public class AnalistaSituacional
             }
             catch (Exception erro)
             {}
-            if (marcasLinha[0].equals(marcasLinha[1]) && marcasLinha[1].equals(marcasLinha[2])) {
-                return marcasLinha[0];
+            if (marcasLinha[0] != null && marcasLinha[1] != null && marcasLinha[3] != null) {
+                if (marcasLinha[0].equals(marcasLinha[1]) && marcasLinha[1].equals(marcasLinha[2])) {
+                    return marcasLinha[0];
+                }
             }
         }
         for (int col = 0; col<3; col++) {
@@ -38,8 +40,11 @@ public class AnalistaSituacional
             }
             catch (Exception erro)
             {}
-            if (marcasCol[0].equals(marcasCol[1]) && marcasCol[1].equals(marcasCol[2])) {
-                return marcasCol[0];
+
+            if (marcasCol[0] != null && marcasCol[1] != null && marcasCol[3] != null) {
+                if (marcasCol[0].equals(marcasCol[1]) && marcasCol[1].equals(marcasCol[2])) {
+                    return marcasCol[0];
+                }
             }
         }
 
@@ -51,8 +56,11 @@ public class AnalistaSituacional
         }
         catch (Exception erro)
         {}
-        if (marcasDiag1[0].equals(marcasDiag1[1]) && marcasDiag1[1].equals(marcasDiag1[2])) {
-            return marcasDiag1[0];
+
+        if (marcasDiag1[0] != null && marcasDiag1[1] != null && marcasDiag1[3] != null) {
+            if (marcasDiag1[0].equals(marcasDiag1[1]) && marcasDiag1[1].equals(marcasDiag1[2])) {
+                return marcasDiag1[0];
+            }
         }
         
         Marca[] marcasDiag2 = new Marca[3];
@@ -64,8 +72,10 @@ public class AnalistaSituacional
         catch (Exception erro)
         {}
 
-        if (marcasDiag2[0].equals(marcasDiag2[1]) && marcasDiag2[1].equals(marcasDiag2[2])) {
-            return marcasDiag2[0];
+        if (marcasDiag2[0] != null && marcasDiag2[1] != null && marcasDiag2[3] != null) {
+            if (marcasDiag2[0].equals(marcasDiag2[1]) && marcasDiag2[1].equals(marcasDiag2[2])) {
+                return marcasDiag2[0];
+            }
         }
 
       return null;

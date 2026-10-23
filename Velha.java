@@ -69,7 +69,7 @@ public class Velha
                 jogadorHumanoComeca = !jogadorHumanoComeca;
             }
             catch (Exception e)
-            {}
+            {System.out.println(e);}
         }
         while (jogadorH.querMaisUmaPartida());
     }

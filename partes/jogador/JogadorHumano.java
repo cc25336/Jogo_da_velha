@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutorCompletionService;
 import partes.Marca;
 import partes.Tabuleiro;
 
-public class JogadorHumano implements Jogador
+public class JogadorHumano implements Jogador, Cloneable
 {
     private Marca          marca     = null;
     private Tabuleiro      tabDoJogo = null;
@@ -87,7 +87,7 @@ public class JogadorHumano implements Jogador
         else if (coluna == 'C') colunaReal = 2;
 
         try {
-            this.tabDoJogo.setMarcaNaPosicao(this.marca, linha, colunaReal);
+            this.tabDoJogo.setMarcaNaPosicao(this.marca, linha-1, colunaReal);
         }
         catch (Exception erro)
         {}
@@ -134,5 +134,33 @@ public class JogadorHumano implements Jogador
         // perguntar se deseja jogar de novo
         // permitindo digitacao e retornando
         // true ou false, conforme a resposta
+    }
+
+    @Override
+    public String toString ()
+    {
+
+    }
+    
+    @Override
+    public boolean equals(Object obj)
+    {
+
+    }
+
+    @Override
+    public int hashCode()
+    {
+
+    }
+    
+    public JogadorHumano (JogadorHumano modelo) throws Exception
+    {
+
+    }
+
+    public Object clone()
+    {
+        
     }
 }

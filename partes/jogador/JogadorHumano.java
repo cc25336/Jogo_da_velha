@@ -54,6 +54,7 @@ public class JogadorHumano implements Jogador
 
     public void facaSuaJogada ()
     {
+        
         // pergunta para o jogador onde ele quer
         // jogar, permitindo digitacao e chamando
         // os métodos apropriados de tabDoJogo

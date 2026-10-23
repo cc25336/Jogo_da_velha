@@ -4,6 +4,8 @@ public class Tabuleiro implements Cloneable
     // a principio, toda igual a null
     private Marca matriz [][] = new Marca [3][3];
 
+    public Tabuleiro () {};
+
     public boolean haMarcaNaPosicao (int lin, int col) throws Exception //feito
     {
         if (lin < 0 || lin > 2) throw new Exception("Linha inválida");

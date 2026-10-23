@@ -40,12 +40,12 @@ public class Tabuleiro implements Cloneable
     @Override
     public String toString ()
     {
-        return "  1   2   3" +
-               "A " + matriz[0][0] + " | " +matriz[0][1] + " | " + matriz[0][2] + "\n" +
+        return "  A   B   C" +
+               "1 " + matriz[0][0] + " | " +matriz[0][1] + " | " + matriz[0][2] + "\n" +
                "  __|___|__\n" +
-               "B " + matriz[1][0] + " | " +matriz[1][1] + " | " + matriz[1][2] + "\n" +
+               "2 " + matriz[1][0] + " | " +matriz[1][1] + " | " + matriz[1][2] + "\n" +
                "  __|___|__\n" +
-               "C " + matriz[2][0] + " | " +matriz[2][1] + " | " + matriz[2][2] + "\n" +
+               "3 " + matriz[2][0] + " | " +matriz[2][1] + " | " + matriz[2][2] + "\n" +
                "  |   |  ";
         // retornar em um String o tabuleiro
         // formatado para ser exibido na tela

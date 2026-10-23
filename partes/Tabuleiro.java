@@ -34,7 +34,6 @@ public class Tabuleiro implements Cloneable
         if (col < 0 || col > 2) throw new Exception("Coluna inválida");
         if (mrc == null) throw new Exception("Marca ausente");
         this.matriz[lin][col] = mrc;
-        System.out.println(this.toString());
         // colocar mrc em matriz[lin][col],
         // dar excecao caso lin ou col invalido
         // dar excecao caso mrc seja null

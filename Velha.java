@@ -34,6 +34,7 @@ public class Velha
                                new Marca(jogadorH.getMarca().getSimbolo()=='X'?'O':'X'));
 
                     jogadorDaVez=jogadorH;
+                    System.out.println(tabDoJogo);
                 }
                 else
                 {
@@ -50,11 +51,13 @@ public class Velha
                 do
                 {
                     jogadorDaVez.facaSuaJogada();
-
+                    
                     if (jogadorDaVez==jogadorH)
                         jogadorDaVez=jogadorA;
-                    else
+                    else {
                         jogadorDaVez=jogadorH;
+                        System.out.println(tabDoJogo);
+                    }
                 }
                 while (!analista.fimDeJogo());
 

@@ -1,6 +1,5 @@
 ﻿package partes.jogador;
 import java.io.*;
-import java.util.concurrent.ExecutorCompletionService;
 
 import partes.Marca;
 import partes.Tabuleiro;

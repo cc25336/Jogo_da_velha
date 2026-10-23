@@ -38,6 +38,10 @@ public class JogadorHumano implements Jogador
 
     public JogadorHumano (Tabuleiro tab, Marca mrc) throws Exception
     {
+        if (tab==null) throw new Exception ("Tabuleiro não fornecido.");
+        if (mrc==null) throw new Exception ("Marca não fornecida.");
+        this.tabDoJogo = tab;
+        this.marca = mrc;
         // atribuir tab para tabDoJogo
         // e mrc para marca
     }
@@ -45,6 +49,7 @@ public class JogadorHumano implements Jogador
     public Marca getMarca ()
     {
         // retorna a marca do jogador
+        return this.marca;
     }
 
     public void facaSuaJogada ()
@@ -56,21 +61,29 @@ public class JogadorHumano implements Jogador
 
     public void vcGanhou ()
     {
+        System.out.println("Parabéns, vc ganhou!");
         // mostra mensagem indicando vitoria
     }
-
+    
     public void vcPerdeu ()
     {
+        System.out.println("Ah que pena, você perdeu.");
         // mostra mensagem indicando derrota
     }
-
+    
     public void deuVelha ()
     {
+        System.out.println("Deu velha!");
         // mostra mensagem indicando empate
     }
 
     public boolean querMaisUmaPartida ()
     {
+        do {
+            System.out.print("Deseja jogar mais uma partida? (S/N) ");
+            String resposta = teclado.readLine();
+        }
+        return true;
         // perguntar se deseja jogar de novo
         // permitindo digitacao e retornando
         // true ou false, conforme a resposta

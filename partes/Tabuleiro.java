@@ -34,6 +34,7 @@ public class Tabuleiro implements Cloneable
         if (col < 0 || col > 2) throw new Exception("Coluna inválida");
         if (mrc == null) throw new Exception("Marca ausente");
         this.matriz[lin][col] = mrc;
+        System.out.println(this.toString());
         // colocar mrc em matriz[lin][col],
         // dar excecao caso lin ou col invalido
         // dar excecao caso mrc seja null
@@ -42,13 +43,13 @@ public class Tabuleiro implements Cloneable
     @Override
     public String toString ()
     {
-        return "  A   B   C" +
-               "1 " + matriz[0][0] + " | " +matriz[0][1] + " | " + matriz[0][2] + "\n" +
+        return "  A   B   C\n" +
+               "1 " + (matriz[0][0] == null ? " " : matriz[0][0]) + " | " +(matriz[0][1] == null ? " " : matriz[0][1]) + " | " + (matriz[0][2] == null ? " " : matriz[0][2]) + "\n" +
                "  __|___|__\n" +
-               "2 " + matriz[1][0] + " | " +matriz[1][1] + " | " + matriz[1][2] + "\n" +
+               "2 " + (matriz[1][0] == null ? " " : matriz[1][0]) + " | " +(matriz[1][1] == null ? " " : matriz[1][1]) + " | " + (matriz[1][2] == null ? " " : matriz[1][2]) + "\n" +
                "  __|___|__\n" +
-               "3 " + matriz[2][0] + " | " +matriz[2][1] + " | " + matriz[2][2] + "\n" +
-               "  |   |  ";
+               "3 " + (matriz[2][0] == null ? " " : matriz[2][0]) + " | " +(matriz[2][1] == null ? " " : matriz[2][1]) + " | " + (matriz[2][2] == null ? " " : matriz[2][2]) + "\n" +
+               "    |   |  ";
         // retornar em um String o tabuleiro
         // formatado para ser exibido na tela
     }

@@ -60,6 +60,8 @@ public class Velha
                     }
                 }
                 while (!analista.fimDeJogo());
+                
+                System.out.println(tabDoJogo);
 
                 if (analista.getMarcaDoVencedor() != null) {
                     if (analista.getMarcaDoVencedor().equals(jogadorH.getMarca()))

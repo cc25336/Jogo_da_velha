@@ -75,7 +75,8 @@ public class Tabuleiro implements Cloneable
         int ret = 7;
         for(byte posCol = 0; posCol<3; posCol++){
             for (byte posLin = 0; posLin<3; posLin++){
-                ret = ret * 31 + (this.matriz[posLin][posCol]).hashCode();
+                if (this.matriz[posLin][posCol] != null)
+                    ret = ret * 31 + (this.matriz[posLin][posCol]).hashCode();
             }
         }
         return ret;

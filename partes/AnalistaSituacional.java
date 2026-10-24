@@ -30,6 +30,16 @@ public class AnalistaSituacional
                     return marcasLinha[0];
                 }
             }
+           /*try {
+               Marca marca1 = this.tabDoJogo.getMarcaNaPosicao(lin, 0);
+               Marca marca2 = this.tabDoJogo.getMarcaNaPosicao(lin, 1);
+               Marca marca3 = this.tabDoJogo.getMarcaNaPosicao(lin, 2);
+               if (marca1 != null && marca2 != null && marca2 != null) {
+                if (marca1.equals(marca2) && marca2.equals(marca3)) return marca1;
+               }
+           } catch (Exception erro) {
+            System.out.println(erro.getMessage());
+           }*/
         }
         for (int col = 0; col<3; col++) {
             Marca[] marcasCol = new Marca[3];

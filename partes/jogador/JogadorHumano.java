@@ -125,7 +125,7 @@ public class JogadorHumano implements Jogador, Cloneable
                 System.out.println("Erro ao ler sua opção.");
             }
             if (resposta.length() != 1 || (Character.toUpperCase(resposta.charAt(0)) != 'S' && Character.toUpperCase(resposta.charAt(0)) != 'N')) {
-                System.out.println("Digite somente S ou N, digite novamente.\n");
+                System.out.println("Digite somente S ou N, digite novamente\n");
             }
             else if (Character.toUpperCase(resposta.charAt(0)) == 'N') return false;
 
@@ -136,7 +136,7 @@ public class JogadorHumano implements Jogador, Cloneable
         // true ou false, conforme a resposta
     }
 
-     @Override
+    @Override
     public String toString (){
         return "Marca: " + this.marca;
     }

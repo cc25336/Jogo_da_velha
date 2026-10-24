@@ -61,18 +61,21 @@ public class Velha
                 }
                 while (!analista.fimDeJogo());
 
-                if (analista.getMarcaDoVencedor().equals(jogadorH.getMarca()))
-                    jogadorH.vcGanhou ();
-                else
-                    if (analista.getMarcaDoVencedor().equals(jogadorA.getMarca()))
-                        jogadorH.vcPerdeu ();
+                if (analista.getMarcaDoVencedor() != null) {
+                    if (analista.getMarcaDoVencedor().equals(jogadorH.getMarca()))
+                        jogadorH.vcGanhou ();
                     else
-                        jogadorH.deuVelha ();
+                        if (analista.getMarcaDoVencedor().equals(jogadorA.getMarca()))
+                            jogadorH.vcPerdeu ();
+                }
+                else
+                    jogadorH.deuVelha ();
+                
 
                 jogadorHumanoComeca = !jogadorHumanoComeca;
             }
             catch (Exception e)
-            {}
+            {e.printStackTrace();}
         }
         while (jogadorH.querMaisUmaPartida());
     }

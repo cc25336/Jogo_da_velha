@@ -127,7 +127,7 @@ public class JogadorHumano implements Jogador, Cloneable
             if (resposta.length() != 1 || (Character.toUpperCase(resposta.charAt(0)) != 'S' && Character.toUpperCase(resposta.charAt(0)) != 'N')) {
                 System.out.println("Digite somente S ou N, digite novamente.\n");
             }
-            else if (resposta.charAt(0) == 'N') return false;
+            else if (Character.toUpperCase(resposta.charAt(0)) == 'N') return false;
 
         } while (resposta.length() != 1 || (Character.toUpperCase(resposta.charAt(0)) != 'S' && Character.toUpperCase(resposta.charAt(0)) != 'N'));
         return true;
